@@ -3,17 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Armonia</title>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-r/qnS4YZBLuBSKeVc+sM4eUYUiJMFhkHfx1nwlErHhTd+NgeJlN/NiiTd6jbKJzm" crossorigin="anonymous">
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="node_modules/bootswatch/journal/bootstrap.css" rel="stylesheet" />
+       <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script>
+        System.config({
+        packages: {        
+          scripts: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('scripts/main')
+            .then(null, console.error.bind(console));
+    </script>
 </head>
 
 <body class="container-fluid">
-    <div class="jumbotron">
-        <h1>Armonia!</h1>
-        <p>Harmony within our community!</p>
-    </div>
+    <app-title></app-title>
 </body>
 
 </html>
